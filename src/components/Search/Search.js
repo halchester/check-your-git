@@ -6,6 +6,7 @@ import axios from "axios";
 const Search = () => {
   const [username, setUsername] = useState("");
 
+  // push with this.history.push
   const getUserInfo = (e, username) => {
     e.preventDefault();
     axios
