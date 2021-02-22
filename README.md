@@ -12,6 +12,13 @@
 
 - [Github rest API](https://docs.github.com/en/rest)
 
+
+### Next todos
+- [x] finish app
+- [] add timeline and repo details
+- [] improve styling
+
+
 ### Installation
 
 1. Clone the repo or download the zip file
@@ -27,3 +34,6 @@ yarn install
   - Copy that token
 5. Add the token to your `.env` file (added in step 3)
 6. Run `yarn start` and go to `localhost:3000`
+
+### Licence
+Chester © 2021 OSS
