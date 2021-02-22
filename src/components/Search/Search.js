@@ -1,23 +1,28 @@
-import { TextField, Typography } from "@material-ui/core";
+import { TextField, Typography, Container } from "@material-ui/core";
 import React, { useState } from "react";
 import styles from "./Search.module.css";
 import axios from "axios";
+import { headers } from "../../utils/headers";
 
-const Search = () => {
+const Search = ({ history }) => {
   const [username, setUsername] = useState("");
 
-  // push with this.history.push
   const getUserInfo = (e, username) => {
     e.preventDefault();
     axios
-      .get(`https://api.github.com/users/${username}/repos`)
+      .get(`https://api.github.com/users/${username}`, {
+        method: "GET",
+        headers: headers,
+      })
       .then((response) => {
-        console.log(response);
+        if (response.status === 200) {
+          history.push("/" + username);
+        }
       });
   };
 
   return (
-    <div className={styles.container}>
+    <Container className={styles.container}>
       <Typography variant="h3" align="center" className={styles.text}>
         Check your git
       </Typography>
@@ -34,7 +39,7 @@ const Search = () => {
           label="Enter your github username"
         />
       </form>
-    </div>
+    </Container>
   );
 };
 

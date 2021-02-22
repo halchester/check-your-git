@@ -1,0 +1,40 @@
+.container {
+  margin: 1rem 0;
+  padding: 1rem;
+}
+.image {
+  border-radius: 50%;
+  width: 75px;
+}
+.body {
+  margin: 1rem 0;
+  padding: 1rem;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.link {
+  text-decoration: none;
+  color: indianred;
+  transition: 0.3s ease;
+}
+.link:hover {
+  color: rgb(9, 174, 250);
+}
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.body__image {
+  margin-right: 0.5rem;
+}
+
+.sub__header {
+  margin: 1.5rem 0 ;
+}
