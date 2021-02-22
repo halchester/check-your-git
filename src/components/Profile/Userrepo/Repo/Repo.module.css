@@ -1,0 +1,13 @@
+.container {
+  margin-top: 1rem;
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.link {
+  text-decoration: none;
+  color: indianred;
+  transition: 0.3s ease;
+}
+.link:hover {
+  color: rgb(9, 174, 250);
+}
