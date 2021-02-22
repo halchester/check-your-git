@@ -39,6 +39,23 @@ const Search = ({ history }) => {
           label="Enter your github username"
         />
       </form>
+      <div className={styles.footer}>
+        <hr />
+        <Typography align="center" variant="h6">
+          <strong>Chester © 2021</strong>
+        </Typography>
+        <Typography align="center" variant="body1">
+          Checkout this project on{" "}
+          <a
+            href="https://github.com/halchester/check-your-git"
+            className={styles.link}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <strong>Github</strong>
+          </a>
+        </Typography>
+      </div>
     </Container>
   );
 };

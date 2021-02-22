@@ -3,7 +3,21 @@
 }
 .container {
   margin-top: 5rem;
+  height: 100%;
 }
 .textfield {
   margin-top: 2rem !important;
+}
+.footer {
+  margin-top: 20rem;
+  bottom: 0;
+  width: 100%;
+}
+.link {
+  text-decoration: underline;
+  color: indianred;
+  transition: 0.3s ease;
+}
+.link:hover {
+  color: rgb(9, 174, 250);
 }
