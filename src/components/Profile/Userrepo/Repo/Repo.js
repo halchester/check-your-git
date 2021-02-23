@@ -13,7 +13,12 @@ const Repo = ({ name, description, language, url }) => {
       <Typography variant="body1">{description}</Typography>
       <hr />
       {language ? (
-        <Button variant="contained" color="primary" size="small">
+        <Button
+          variant="contained"
+          color="primary"
+          size="small"
+          className={styles.button}
+        >
           {language}
         </Button>
       ) : null}
