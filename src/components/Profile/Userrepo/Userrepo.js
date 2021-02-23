@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Repo from "./Repo/Repo";
 import styles from "./Userrepo.module.css";
 import Pagination from "@material-ui/lab/Pagination";
-
 const Userrepo = ({ userrepo, username }) => {
   const [currentpage, setCurrentpage] = useState(1);
 
@@ -13,11 +12,10 @@ const Userrepo = ({ userrepo, username }) => {
   const currentRepos = userrepo.slice(indexOfFirstRepo, indexOfLastRepo);
 
   const changePageHandler = (e, pagenumber) => {
+    e.preventDefault();
     setCurrentpage(pagenumber);
   };
-
-  let totalPages = Math.ceil(userrepo / reposPerPage);
-
+  let totalPages = Math.ceil(userrepo.length / reposPerPage);
   return (
     <div className={styles.container}>
       <Typography variant="h5" align="left">
@@ -25,9 +23,8 @@ const Userrepo = ({ userrepo, username }) => {
       </Typography>
       <div className={styles.pagination}>
         <Pagination
-          color="primary"
-          page={currentpage}
           count={totalPages}
+          page={currentpage}
           onChange={changePageHandler}
         />
       </div>
@@ -43,6 +40,11 @@ const Userrepo = ({ userrepo, username }) => {
           </Grid>
         ))}
       </Grid>
+      {/* <div className={styles.activities}>
+        <Typography variant="h5" align="left">
+          Activities by <strong>{username}</strong>
+        </Typography>
+      </div> */}
     </div>
   );
 };
