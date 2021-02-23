@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Card, Typography } from "@material-ui/core";
 import styles from "./Repo.module.css";
 
-const Repo = ({ name, description, language, url }) => {
+const Repo = ({ name, description, language, url, stars }) => {
   return (
     <Card className={styles.container}>
       <Typography variant="h6" gutterBottom>
@@ -13,14 +13,17 @@ const Repo = ({ name, description, language, url }) => {
       <Typography variant="body1">{description}</Typography>
       <hr />
       {language ? (
-        <Button
-          variant="contained"
-          color="primary"
-          size="small"
-          className={styles.button}
-        >
-          {language}
-        </Button>
+        <div className={styles.footer}>
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            className={styles.button}
+          >
+            {language}
+          </Button>
+          {stars ? <Typography align="right">⭐️ {stars}</Typography> : null}
+        </div>
       ) : null}
     </Card>
   );

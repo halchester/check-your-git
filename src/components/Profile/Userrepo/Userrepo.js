@@ -36,6 +36,7 @@ const Userrepo = ({ userrepo, username }) => {
               description={repo.description}
               language={repo.language}
               url={repo.html_url}
+              stars={repo.stargazers_count}
             />
           </Grid>
         ))}
