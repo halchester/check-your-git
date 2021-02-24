@@ -36,7 +36,9 @@ const Profile = (props) => {
         });
       });
     axios
-      .get(`https://api.github.com/users/${username}/repos`)
+      .get(
+        `https://api.github.com/users/${username}/repos?type=public&sort=created&direction=desc`
+      )
       .then((response) => {
         setUserrepo(response.data);
       })

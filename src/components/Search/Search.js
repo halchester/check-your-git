@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import styles from "./Search.module.css";
 import axios from "axios";
 import { headers } from "../../utils/headers";
+import Error from "./Error/Error";
 
 const Search = ({ history }) => {
   const [username, setUsername] = useState("");
+  const [notFound, setNotFound] = useState(false);
 
   const getUserInfo = (e, username) => {
     e.preventDefault();
@@ -18,7 +20,8 @@ const Search = ({ history }) => {
         if (response.status === 200) {
           history.push("/" + username);
         }
-      });
+      })
+      .catch((err) => setNotFound(true));
   };
 
   return (
@@ -39,6 +42,7 @@ const Search = ({ history }) => {
           label="Enter your github username"
         />
       </form>
+      {notFound ? <Error /> : null}
       <div className={styles.footer}>
         <hr />
         <Typography align="center" variant="h6">
